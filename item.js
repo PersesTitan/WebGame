@@ -7,7 +7,7 @@ function remove(value, interval) {
 }
 
 function downHp() {
-    hp--;
+    if (hp > 0) hp--;
     document.getElementById('hp').innerText = hp;
 }
 
@@ -16,6 +16,6 @@ function upScore() {
     document.getElementById('score').innerText = score;
 }
 
-function speed() {
-    return Math.max(2, random(490 - score - 5, 510 - score));
+function speed(value) {
+    return Math.max(10, random(value - 3, value + 3));
 }
